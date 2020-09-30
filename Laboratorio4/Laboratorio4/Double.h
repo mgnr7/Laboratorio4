@@ -3,19 +3,19 @@
 #include "Operando.h"
 
 template <typename T>
-class Suma : public Operando <typename T> 
+class Double : Operando <typename T> 
 {
 public:
-	Suma();
-	~Suma();
+	Double();
+	~Double();
 };
 
 template<typename T>
-inline Suma<T>::Suma()
+inline Double<T>::Double()
 {
 }
 
 template<typename T>
-inline Suma<T>::~Suma()
+inline Double<T>::~Double()
 {
 }

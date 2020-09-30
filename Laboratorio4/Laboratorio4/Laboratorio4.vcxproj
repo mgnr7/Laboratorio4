@@ -142,11 +142,11 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Division.h" />
-    <ClInclude Include="Multiplicacion.h" />
+    <ClInclude Include="Fraccion.h" />
+    <ClInclude Include="Double.h" />
     <ClInclude Include="Operando.h" />
-    <ClInclude Include="Resta.h" />
-    <ClInclude Include="Suma.h" />
+    <ClInclude Include="Complejo.h" />
+    <ClInclude Include="Monomio.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

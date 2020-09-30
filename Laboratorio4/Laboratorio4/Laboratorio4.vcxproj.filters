@@ -23,16 +23,16 @@
     <ClInclude Include="Operando.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Suma.h">
+    <ClInclude Include="Fraccion.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Resta.h">
+    <ClInclude Include="Double.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Multiplicacion.h">
+    <ClInclude Include="Complejo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Division.h">
+    <ClInclude Include="Monomio.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
