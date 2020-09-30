@@ -2,20 +2,19 @@
 
 #include "Operando.h"
 
-template <typename T>
-class Complejo : Operando <typename T> 
+class Complejo : public Operando
 {
 public:
 	Complejo();
 	~Complejo();
 };
 
-template<typename T>
-inline Complejo<T>::Complejo()
+
+inline Complejo::Complejo()
 {
 }
 
-template<typename T>
-inline Complejo<T>::~Complejo()
+
+inline Complejo::~Complejo()
 {
 }

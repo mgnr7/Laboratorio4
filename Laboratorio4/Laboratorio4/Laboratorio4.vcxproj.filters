@@ -35,5 +35,11 @@
     <ClInclude Include="Monomio.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Polinomio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Matriz.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

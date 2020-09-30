@@ -2,20 +2,18 @@
 
 #include "Operando.h"
 
-template <typename T>
-class Fraccion : Operando <typename T> 
+class Fraccion : public Operando
 {
 public:
 	Fraccion();
 	~Fraccion();
 };
 
-template<typename T>
-inline Fraccion<T>::Fraccion()
+
+inline Fraccion::Fraccion()
 {
 }
 
-template<typename T>
-inline Fraccion<T>::~Fraccion()
+inline Fraccion::~Fraccion()
 {
 }

@@ -144,9 +144,11 @@
   <ItemGroup>
     <ClInclude Include="Fraccion.h" />
     <ClInclude Include="Double.h" />
+    <ClInclude Include="Matriz.h" />
     <ClInclude Include="Operando.h" />
     <ClInclude Include="Complejo.h" />
     <ClInclude Include="Monomio.h" />
+    <ClInclude Include="Polinomio.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

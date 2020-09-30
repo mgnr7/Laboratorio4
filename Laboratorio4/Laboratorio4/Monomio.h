@@ -2,20 +2,19 @@
 
 #include "Operando.h"
 
-template <typename T>
-class Monomio : public Operando <typename T> 
+class Monomio : public Operando
 {
 public:
 	Monomio();
 	~Monomio();
 };
 
-template<typename T>
-inline Monomio<T>::Monomio()
+
+inline Monomio::Monomio()
 {
 }
 
-template<typename T>
-inline Monomio<T>::~Monomio()
+
+inline Monomio::~Monomio()
 {
 }

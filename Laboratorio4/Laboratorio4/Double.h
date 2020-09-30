@@ -2,20 +2,19 @@
 
 #include "Operando.h"
 
-template <typename T>
-class Double : Operando <typename T> 
+class Double : public Operando 
 {
 public:
 	Double();
 	~Double();
 };
 
-template<typename T>
-inline Double<T>::Double()
+
+inline Double::Double()
 {
 }
 
-template<typename T>
-inline Double<T>::~Double()
+
+inline Double::~Double()
 {
 }
