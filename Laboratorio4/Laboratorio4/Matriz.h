@@ -14,9 +14,16 @@ private:
 	int** matriz;
 };
 
+inline Matriz::Matriz()
+{
+	tamano = 1;
+	**matriz = 0;
+}
+
 inline Matriz::Matriz(int n, std::vector<int> datos)
 {
-	matriz = (int**)malloc(n * n * sizeof(int));
+	this->tamano = n;
+	matriz = (int**)malloc(tamano * tamano * sizeof(int));
 	//TO DO: Convertir el vector de datos a una matriz n*n
 }
 

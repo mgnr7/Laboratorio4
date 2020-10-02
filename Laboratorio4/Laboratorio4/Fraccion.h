@@ -13,7 +13,7 @@ private:
 };
 
 
-inline Fraccion::Fraccion(int num, int den)
+inline Fraccion::Fraccion(int num = 0, int den = 0)
 {
 	this->numerador = num;
 	this->denominador = den;
