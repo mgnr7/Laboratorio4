@@ -2,6 +2,8 @@
 
 #include "Operando.h"
 
+using namespace std;
+
 class Double : public Operando 
 {
 public:
