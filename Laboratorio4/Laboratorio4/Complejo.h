@@ -16,7 +16,7 @@ private:
 };
 
 
-inline Complejo::Complejo(double real, double imaginario)
+inline Complejo::Complejo(double real = 0, double imaginario = 0)
 {
 	this->parteReal = real;
 	this->parteImaginaria = imaginario;

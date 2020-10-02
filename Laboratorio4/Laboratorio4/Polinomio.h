@@ -8,8 +8,8 @@ class Polinomio : public Operando
 {
 public:
 	Polinomio();
-	Polinomio(std::vector<Monomio> vectorMonomios); // recibe vector de monomios
-	Polinomio(Monomio* arregloMonomios); // recibe arreglo de monomios
+	explicit Polinomio(std::vector<Monomio> vectorMonomios); // recibe vector de monomios
+	explicit Polinomio(Monomio* arregloMonomios); // recibe arreglo de monomios
 
 	~Polinomio();
 private:

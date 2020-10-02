@@ -13,7 +13,7 @@ private:
 };
 
 
-inline Monomio::Monomio(double coef, int grado)
+inline Monomio::Monomio(double coef = 0, int grado = 0)
 {
 	this->coeficiente = coef;
 	this->grado = grado;

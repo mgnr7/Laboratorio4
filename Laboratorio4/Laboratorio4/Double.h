@@ -5,7 +5,7 @@
 class Double : public Operando 
 {
 public:
-	Double(double valor = 0.0);
+	explicit Double(double valor = 0.0);
 	~Double();
 
 private:
@@ -13,7 +13,7 @@ private:
 };
 
 
-inline Double::Double(double valor)
+inline Double::Double(double valor = 0.0)
 {
 	this->valor = valor;
 }
