@@ -5,13 +5,18 @@
 class Fraccion : public Operando
 {
 public:
-	Fraccion();
+	Fraccion(int num = 0, int den = 0);
 	~Fraccion();
+private:
+	int numerador;
+	int denominador;
 };
 
 
-inline Fraccion::Fraccion()
+inline Fraccion::Fraccion(int num, int den)
 {
+	this->numerador = num;
+	this->denominador = den;
 }
 
 inline Fraccion::~Fraccion()

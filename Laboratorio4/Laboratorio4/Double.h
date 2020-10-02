@@ -5,13 +5,17 @@
 class Double : public Operando 
 {
 public:
-	Double();
+	Double(double valor = 0.0);
 	~Double();
+
+private:
+	double valor;
 };
 
 
-inline Double::Double()
+inline Double::Double(double valor)
 {
+	this->valor = valor;
 }
 
 
