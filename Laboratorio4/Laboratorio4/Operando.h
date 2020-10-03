@@ -6,19 +6,25 @@ using namespace std;
 
 class Operando 
 {
+protected:
+	string valorString;
+
 public:
+
 	Operando();
 	~Operando();
 
 	Operando* evaluarExpresion(string expresion);
 
+	virtual void setValorString(string val) = 0;
+	virtual string getValorString() = 0;
 
-	virtual void suma(const stack<Operando>* pila) = 0;
-	virtual void resta(const stack<Operando>* pila) = 0;
-	virtual void multiplicacion(const stack<Operando>* pila) = 0;
-	virtual void division(const stack<Operando>* pila) = 0;
+	virtual void suma( stack<Operando*>* pila) = 0;
+	virtual void resta( stack<Operando*>* pila) = 0;
+	virtual void multiplicacion( stack<Operando*>* pila) = 0;
+	virtual void division( stack<Operando*>* pila) = 0;
 
-	virtual void extraerValor(const stack<Operando>* pila, string expresion) = 0;
+	virtual int extraerValor( stack<Operando*>* pila, string expresion, int indice) = 0;
 
 };
 
@@ -34,9 +40,9 @@ Operando::~Operando()
 /*Metodo plantilla: La idea es un algoritmo que utiliza operaciones que pueden ser implementadas de diferente manera por cada clase*/
 Operando* Operando::evaluarExpresion(string expresion)
 {
-	stack<Operando> pila;
+	stack<Operando*> pila;
 
-	for (int i = 0; i < expresion.size(); ++i)
+	for (unsigned int i = 0; i < expresion.size(); ++i)
 	{
 		if (expresion.at(i) == '*' || expresion.at(i) == '+' || expresion.at(i) == '-' || expresion.at(i) == '/')
 		{
@@ -68,11 +74,16 @@ Operando* Operando::evaluarExpresion(string expresion)
 		{
 			if (expresion.at(i) != ' ') 
 			{
-				extraerValor(&pila, expresion);
+				/*Indicar que parte de la expresion se va leyendo*/
+				i = extraerValor(&pila, expresion, i+1);
 			}
 
 			
 		}
 	}
-	return &(pila.top());
+
+	Operando** result = new Operando*;
+	*result = pila.top();
+
+	return *result;
 }
