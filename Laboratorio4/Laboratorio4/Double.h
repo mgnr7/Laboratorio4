@@ -134,6 +134,7 @@ inline int Double::extraerValor( stack<Operando*>* pila, string expresion, int i
 
 	/*Se crea un nuevo operando de tipo double y se inserta en la pila*/
 	Double* operando_double = new Double(d);
+	operando_double->setValorString(subs);
 	pila->push(operando_double);
 
 	/*Se retorna el indice + 3 porque un double son 3 caracteres*/
