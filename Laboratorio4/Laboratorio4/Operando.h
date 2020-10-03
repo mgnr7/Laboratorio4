@@ -6,12 +6,12 @@ using namespace std;
 
 class Operando 
 {
-
 public:
 	Operando();
 	~Operando();
 
 	Operando* evaluarExpresion(string expresion);
+
 
 	virtual void suma(const stack<Operando>* pila) = 0;
 	virtual void resta(const stack<Operando>* pila) = 0;
@@ -19,7 +19,6 @@ public:
 	virtual void division(const stack<Operando>* pila) = 0;
 
 	virtual void extraerValor(const stack<Operando>* pila, string expresion) = 0;
-	virtual void resultadoToString(const stack<Operando>* pila) = 0;
 
 };
 

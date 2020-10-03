@@ -9,6 +9,14 @@ public:
 	Matriz(int n, std::vector<int> datos); //Recibe un vector normal de enteros y los formatea en una matriz n*n
 	Matriz(int n, int** matriz); // Recibe una matriz ya formateada y solo la asigna
 	~Matriz();
+
+	void suma(const stack<Operando>* pila) override;
+	void resta(const stack<Operando>* pila) override;
+	void multiplicacion(const stack<Operando>* pila) override;
+	void division(const stack<Operando>* pila) override;
+
+	void extraerValor(const stack<Operando>* pila, string expresion) override;
+
 private:
 	int tamano; //N*N
 	int** matriz;
@@ -37,4 +45,30 @@ inline Matriz::Matriz(int n, int** matriz)
 inline Matriz::~Matriz()
 {
 	delete matriz;
+}
+
+
+
+inline void Matriz::suma(const stack<Operando>* pila)
+{
+	/*Se extraen 2 valores de la pila y se suman*/
+}
+
+inline void Matriz::resta(const stack<Operando>* pila)
+{
+	/*Se extraen 2 valores de la pila y se restan*/
+}
+
+inline void Matriz::multiplicacion(const stack<Operando>* pila)
+{
+	/*Se extraen 2 valores de la pila y se multiplican*/
+}
+
+inline void Matriz::division(const stack<Operando>* pila)
+{
+	/*Se extraen 2 valores de la pila y se dividen*/
+}
+
+inline void Matriz::extraerValor(const stack<Operando>* pila, string expresion)
+{
 }
