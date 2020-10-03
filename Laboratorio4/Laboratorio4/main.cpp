@@ -6,7 +6,7 @@
 #include "Double.h"
 #include "Fraccion.h"
 #include "Complejo.h"
-//#include "Matriz.h"
+#include "Matriz.h"
 //#include "Monomio.h"
 //#include "Polinomio.h"
 

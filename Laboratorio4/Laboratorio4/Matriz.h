@@ -10,12 +10,17 @@ public:
 	Matriz(int n, int** matriz); // Recibe una matriz ya formateada y solo la asigna
 	~Matriz();
 
-	void suma(const stack<Operando>* pila) override;
-	void resta(const stack<Operando>* pila) override;
-	void multiplicacion(const stack<Operando>* pila) override;
-	void division(const stack<Operando>* pila) override;
+	void setValorString(string val) override;
+	string getValorString() override;
 
-	void extraerValor(const stack<Operando>* pila, string expresion) override;
+	void traducirValorString(string val);
+
+	void suma( stack<Operando*>* pila) override;
+	void resta( stack<Operando*>* pila) override;
+	void multiplicacion( stack<Operando*>* pila) override;
+	void division( stack<Operando*>* pila) override;
+
+	int extraerValor( stack<Operando*>* pila, string expresion, int indice) override;
 
 private:
 	int tamano; //N*N
@@ -47,28 +52,41 @@ inline Matriz::~Matriz()
 	delete matriz;
 }
 
+inline void Matriz::setValorString(string val)
+{
+	valorString = val;
+}
 
+inline string Matriz::getValorString()
+{
+	return valorString;
+}
 
-inline void Matriz::suma(const stack<Operando>* pila)
+inline void Matriz::traducirValorString(string val)
+{
+
+}
+
+inline void Matriz::suma( stack<Operando*>* pila)
 {
 	/*Se extraen 2 valores de la pila y se suman*/
 }
 
-inline void Matriz::resta(const stack<Operando>* pila)
+inline void Matriz::resta( stack<Operando*>* pila)
 {
 	/*Se extraen 2 valores de la pila y se restan*/
 }
 
-inline void Matriz::multiplicacion(const stack<Operando>* pila)
+inline void Matriz::multiplicacion( stack<Operando*>* pila)
 {
 	/*Se extraen 2 valores de la pila y se multiplican*/
 }
 
-inline void Matriz::division(const stack<Operando>* pila)
+inline void Matriz::division( stack<Operando*>* pila)
 {
 	/*Se extraen 2 valores de la pila y se dividen*/
 }
 
-inline void Matriz::extraerValor(const stack<Operando>* pila, string expresion)
+inline int Matriz::extraerValor( stack<Operando*>* pila, string expresion, int indice)
 {
 }
