@@ -13,12 +13,17 @@ public:
 
 	~Polinomio();
 
-	void suma(const stack<Operando>* pila) override;
-	void resta(const stack<Operando>* pila) override;
-	void multiplicacion(const stack<Operando>* pila) override;
-	void division(const stack<Operando>* pila) override;
+	void setValorString(string val) override;
+	string getValorString() override;
 
-	void extraerValor(const stack<Operando>* pila, string expresion) override;
+	void traducirValorString(string val);
+
+	void suma(stack<Operando*>* pila) override;
+	void resta(stack<Operando*>* pila) override;
+	void multiplicacion(stack<Operando*>* pila) override;
+	void division(stack<Operando*>* pila) override;
+
+	int extraerValor(stack<Operando*>* pila, string expresion, int indice) override;
 
 private:
 	std::vector<Monomio> polinomio;
@@ -41,26 +46,41 @@ inline Polinomio::~Polinomio()
 {
 }
 
-inline void Polinomio::suma(const stack<Operando>* pila)
+inline void Polinomio::setValorString(string val)
+{
+	valorString = val;
+}
+
+inline string Polinomio::getValorString()
+{
+	return valorString;
+}
+
+inline void Polinomio::traducirValorString(string val)
+{
+
+}
+
+inline void Polinomio::suma( stack<Operando*>* pila)
 {
 	/*Se extraen 2 valores de la pila y se suman*/
 }
 
-inline void Polinomio::resta(const stack<Operando>* pila)
+inline void Polinomio::resta(stack<Operando*>* pila)
 {
 	/*Se extraen 2 valores de la pila y se restan*/
 }
 
-inline void Polinomio::multiplicacion(const stack<Operando>* pila)
+inline void Polinomio::multiplicacion(stack<Operando*>* pila)
 {
 	/*Se extraen 2 valores de la pila y se multiplican*/
 }
 
-inline void Polinomio::division(const stack<Operando>* pila)
+inline void Polinomio::division(stack<Operando*>* pila)
 {
 	/*Se extraen 2 valores de la pila y se dividen*/
 }
 
-inline void Polinomio::extraerValor(const stack<Operando>* pila, string expresion)
+inline int Polinomio::extraerValor(stack<Operando*>* pila, string expresion, int indice)
 {
 }
