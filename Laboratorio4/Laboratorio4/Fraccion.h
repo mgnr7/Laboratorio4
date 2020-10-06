@@ -11,7 +11,7 @@ public:
 	void setValorString(string val) override;
 	string getValorString() override;
 
-	void traducirValorString(string val);
+	int* traducirValorString(string val);
 
 	void suma( stack<Operando*>* pila) override;
 	void resta( stack<Operando*>* pila) override;
@@ -47,9 +47,13 @@ inline string Fraccion::getValorString()
 	return valorString;
 }
 
-inline void Fraccion::traducirValorString(string val)
+inline int* Fraccion::traducirValorString(string val)
 {
+	static int fraccion[3];
+	fraccion[0] = val.at(0) - '0';
+	fraccion[1] = val.at(2) - '0';
 
+	return fraccion;
 }
 
 inline void Fraccion::suma( stack<Operando*>* pila)
@@ -59,6 +63,9 @@ inline void Fraccion::suma( stack<Operando*>* pila)
 	pila->pop();
 	string valor2 = pila->top()->getValorString();
 	pila->pop();
+
+	int* fraccion1 = traducirValorString(valor1);
+	int* fraccion2 = traducirValorString(valor2);
 
 
 }
@@ -70,6 +77,11 @@ inline void Fraccion::resta( stack<Operando*>* pila)
 	pila->pop();
 	string valor2 = pila->top()->getValorString();
 	pila->pop();
+
+	int* fraccion1 = traducirValorString(valor1);
+	int* fraccion2 = traducirValorString(valor2);
+
+
 }
 
 inline void Fraccion::multiplicacion( stack<Operando*>* pila)
@@ -79,6 +91,9 @@ inline void Fraccion::multiplicacion( stack<Operando*>* pila)
 	pila->pop();
 	string valor2 = pila->top()->getValorString();
 	pila->pop();
+
+	int* fraccion1 = traducirValorString(valor1);
+	int* fraccion2 = traducirValorString(valor2);
 }
 
 inline void Fraccion::division( stack<Operando*>* pila)
@@ -88,6 +103,9 @@ inline void Fraccion::division( stack<Operando*>* pila)
 	pila->pop();
 	string valor2 = pila->top()->getValorString();
 	pila->pop();
+
+	int* fraccion1 = traducirValorString(valor1);
+	int* fraccion2 = traducirValorString(valor2);
 }
 
 inline int Fraccion::extraerValor( stack<Operando*>* pila, string expresion, int indice)
