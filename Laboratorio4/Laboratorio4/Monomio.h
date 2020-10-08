@@ -55,21 +55,54 @@ inline void Monomio::traducirValorString(string val)
 inline void Monomio::suma( stack<Operando*>* pila)
 {
 	/*Se extraen 2 valores de la pila y se suman*/
+	Monomio* m1 = dynamic_cast<Monomio*>(pila->top());
+	pila->pop();
+	Monomio* m2 = dynamic_cast<Monomio*>(pila->top());
+	pila->pop();
+
+	if (m1->grado == m2->grado) {
+		m1->coeficiente += m2->coeficiente;
+	}
 }
 
 inline void Monomio::resta( stack<Operando*>* pila)
 {
 	/*Se extraen 2 valores de la pila y se restan*/
+	Monomio* m1 = dynamic_cast<Monomio*>(pila->top());
+	pila->pop();
+	Monomio* m2 = dynamic_cast<Monomio*>(pila->top());
+	pila->pop();
+
+	if (m1->grado == m2->grado) {
+		m1->coeficiente -= m2->coeficiente;
+	}
+	else {
+		//Genera un objeto Polinomio?
+	}
 }
 
 inline void Monomio::multiplicacion( stack<Operando*>* pila)
 {
 	/*Se extraen 2 valores de la pila y se multiplican*/
+	Monomio* m1 = dynamic_cast<Monomio*>(pila->top());
+	pila->pop();
+	Monomio* m2 = dynamic_cast<Monomio*>(pila->top());
+	pila->pop();
+
+	m1->coeficiente *= m2->coeficiente;
+	m1->grado += m2->grado;
 }
 
 inline void Monomio::division( stack<Operando*>* pila)
 {
 	/*Se extraen 2 valores de la pila y se dividen*/
+	Monomio* m1 = dynamic_cast<Monomio*>(pila->top());
+	pila->pop();
+	Monomio* m2 = dynamic_cast<Monomio*>(pila->top());
+	pila->pop();
+
+	m1->coeficiente /= m2->coeficiente;
+	m1->grado -= m2->grado;
 }
 
 inline int Monomio::extraerValor( stack<Operando*>* pila, string expresion, int indice)
